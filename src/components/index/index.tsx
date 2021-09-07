@@ -49,6 +49,7 @@ export const Component = () => {
 	})
 
 	const [selected, setSelected] = useState(MainMenu.about)
+	const [activeMenu, setActiveMenu] = useState<MainMenu | null>(null)
 	const [timeString, setTimeString] = useState(formattedTime())
 
 	setInterval(() => {
@@ -107,6 +108,24 @@ export const Component = () => {
 		},
 		{ keydown: true },
 		[selected],
+	)
+
+	useHotkeys(
+		"enter",
+		() => {
+			setActiveMenu(selected)
+		},
+		{ keydown: true },
+		[selected, activeMenu],
+	)
+
+	useHotkeys(
+		"escape",
+		() => {
+			setActiveMenu(null)
+		},
+		{ keydown: true },
+		[selected, activeMenu],
 	)
 
 	return (
