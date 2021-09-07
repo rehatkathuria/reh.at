@@ -7,9 +7,7 @@ import {
 	DateTimeContainer,
 	Header,
 	Menu,
-	MenuItem,
-	Playback,
-	PlaybackControl,
+	MenuItem, Playback, PlaybackContainer, PlaybackControl,
 	TimeStyle
 } from "./styles"
 
@@ -126,13 +124,15 @@ export const Component = () => {
 						)
 					})}
 				</Menu>
-				<PlaybackControl>Play</PlaybackControl>
 			</Container>
 			<DateTimeContainer>
 				<TimeStyle>{timeString}</TimeStyle>
 				<DateStyle>{date}</DateStyle>
 			</DateTimeContainer>
-			<Playback>00:00:00</Playback>
+			<PlaybackContainer>
+				<PlaybackControl>Play</PlaybackControl>
+				<Playback>00:00:00</Playback>
+			</PlaybackContainer>
 		</>
 	)
 }

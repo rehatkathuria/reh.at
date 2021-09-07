@@ -53,20 +53,24 @@ export const TimeStyle = styled.h2`
 	text-transform: uppercase;
 `
 
+export const PlaybackContainer = styled.div`
+	display: grid;
+	grid-template-rows: auto auto;
+	grid-gap: 5px;
+	position: absolute;
+	right: 30px;
+	bottom: 20px;
+`
+
 export const PlaybackControl = styled.h2`
 	color: ${(props) => props.theme.text};
 	font-family: VCR;
-	position: absolute;
-	left: 30px;
-	top: 20px;
+	text-align: right;
 	text-transform: uppercase;
 `
 
 export const Playback = styled.h2`
 	color: ${(props) => props.theme.text};
 	font-family: VCR;
-	position: absolute;
-	right: 30px;
-	bottom: 20px;
 	text-transform: uppercase;
 `
