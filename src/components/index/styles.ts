@@ -5,13 +5,12 @@ export const Container = styled.div`
 	width: 100vw;
 	display: grid;
 	place-items: start;
-	place-content: center;
+	align-content: center;
 	grid-gap: 20px;
 `
 
 export const Menu = styled.div`
 	text-transform: uppercase;
-	margin-left: -25px;
 `
 
 export const MenuItem = styled.div`
@@ -22,7 +21,7 @@ export const MenuItem = styled.div`
 	letter-spacing: 0.2rem;
 `
 
-export const MenuTitleActive = styled.h2`
+export const MenuTitleActive = styled.h3`
 	background: ${(props) => props.theme.text};
 	color: ${(props) => props.theme.background};
 	font-family: VCR;
@@ -30,7 +29,7 @@ export const MenuTitleActive = styled.h2`
 	padding: 4px;
 `
 
-export const MenuTitleInactive = styled.h2`
+export const MenuTitleInactive = styled.h3`
 	color: ${(props) => props.theme.text};
 	font-family: VCR;
 	letter-spacing: 0.2rem;
