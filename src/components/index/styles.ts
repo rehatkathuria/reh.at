@@ -11,6 +11,7 @@ export const Container = styled.div`
 
 export const Menu = styled.div`
 	text-transform: uppercase;
+	margin-left: -25px;
 `
 
 export const MenuItem = styled.h2`
