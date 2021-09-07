@@ -58,6 +58,14 @@ export const Component = () => {
 		if (setTimeString !== undefined) setTimeString(formattedTime())
 	}, 1000)
 
+	const activateCurrentSelection = () => {
+		setActiveMenu(selected)
+	}
+
+	const clearCurrentSelection = () => {
+		setActiveMenu(null)
+	}
+
 	useHotkeys(
 		"up",
 		() => {
@@ -112,23 +120,25 @@ export const Component = () => {
 		[selected],
 	)
 
-	useHotkeys(
-		"enter",
-		() => {
-			setActiveMenu(selected)
-		},
-		{ keydown: true },
-		[selected, activeMenu],
-	)
+	useHotkeys("enter", activateCurrentSelection, { keydown: true }, [
+		selected,
+		activeMenu,
+	])
 
-	useHotkeys(
-		"escape",
-		() => {
-			setActiveMenu(null)
-		},
-		{ keydown: true },
-		[selected, activeMenu],
-	)
+	useHotkeys("right", activateCurrentSelection, { keydown: true }, [
+		selected,
+		activeMenu,
+	])
+
+	useHotkeys("escape", clearCurrentSelection, { keydown: true }, [
+		selected,
+		activeMenu,
+	])
+
+	useHotkeys("left", clearCurrentSelection, { keydown: true }, [
+		selected,
+		activeMenu,
+	])
 
 	const menuItemTitle = (menu: MainMenu) => {
 		return menu === activeMenu ? (
