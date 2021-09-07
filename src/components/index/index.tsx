@@ -144,7 +144,14 @@ export const Component = () => {
 		return menu === activeMenu ? (
 			<MenuTitleActive> {menu} </MenuTitleActive>
 		) : (
-			<MenuTitleInactive> {menu} </MenuTitleInactive>
+			<MenuTitleInactive
+				onClick={() => {
+					setSelected(menu)
+					setActiveMenu(menu)
+				}}
+			>
+				{menu}
+			</MenuTitleInactive>
 		)
 	}
 

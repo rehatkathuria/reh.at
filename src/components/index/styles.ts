@@ -30,6 +30,7 @@ export const MenuTitleActive = styled.h3`
 `
 
 export const MenuTitleInactive = styled.h3`
+	cursor: pointer;
 	color: ${(props) => props.theme.text};
 	font-family: VCR;
 	letter-spacing: 0.2rem;
