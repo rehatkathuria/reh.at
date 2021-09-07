@@ -14,12 +14,27 @@ export const Menu = styled.div`
 	margin-left: -25px;
 `
 
-export const MenuItem = styled.h2`
+export const MenuItem = styled.div`
 	display: grid;
 	grid-template-columns: 25px auto;
+	color: ${(props) => props.theme.text};
 	font-family: VCR;
 	letter-spacing: 0.2rem;
+`
+
+export const MenuTitleActive = styled.h2`
+	background: ${(props) => props.theme.text};
+	color: ${(props) => props.theme.background};
+	font-family: VCR;
+	letter-spacing: 0.2rem;
+	padding: 4px;
+`
+
+export const MenuTitleInactive = styled.h2`
 	color: ${(props) => props.theme.text};
+	font-family: VCR;
+	letter-spacing: 0.2rem;
+	padding: 4px;
 `
 
 export const HeaderContainer = styled.div`
@@ -38,7 +53,9 @@ export const Header = styled.h2`
 	text-transform: uppercase;
 `
 
-export const ArrowContainer = styled.div``
+export const ArrowContainer = styled.div`
+	place-self: center;
+`
 
 export const DateTimeContainer = styled.div`
 	display: grid;

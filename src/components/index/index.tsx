@@ -9,6 +9,8 @@ import {
 	HeaderContainer,
 	Menu,
 	MenuItem,
+	MenuTitleActive,
+	MenuTitleInactive,
 	Playback,
 	PlaybackContainer,
 	PlaybackControl,
@@ -128,6 +130,14 @@ export const Component = () => {
 		[selected, activeMenu],
 	)
 
+	const menuItemTitle = (menu: MainMenu) => {
+		return menu === activeMenu ? (
+			<MenuTitleActive> {menu} </MenuTitleActive>
+		) : (
+			<MenuTitleInactive> {menu} </MenuTitleInactive>
+		)
+	}
+
 	return (
 		<>
 			<HeaderContainer>
@@ -139,12 +149,12 @@ export const Component = () => {
 						return element === selected ? (
 							<MenuItem key={element}>
 								<ArrowContainer> {">"} </ArrowContainer>
-								{element}
+								{menuItemTitle(element)}
 							</MenuItem>
 						) : (
 							<MenuItem key={element}>
 								<ArrowContainer />
-								{element}
+								{menuItemTitle(element)}
 							</MenuItem>
 						)
 					})}
