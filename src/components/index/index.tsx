@@ -51,7 +51,7 @@ export const Component = () => {
 	})
 
 	const [selected, setSelected] = useState(MainMenu.about)
-	const [activeMenu, setActiveMenu] = useState<MainMenu | null>(null)
+	const [activeMenu, setActiveMenu] = useState<MainMenu>(MainMenu.about)
 	const [timeString, setTimeString] = useState(formattedTime())
 
 	setInterval(() => {
@@ -63,7 +63,7 @@ export const Component = () => {
 	}
 
 	const clearCurrentSelection = () => {
-		setActiveMenu(null)
+		setSelected(activeMenu)
 	}
 
 	useHotkeys(
