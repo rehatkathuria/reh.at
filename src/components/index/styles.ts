@@ -22,7 +22,15 @@ export const MenuItem = styled.h2`
 	color: ${(props) => props.theme.text};
 `
 
-export const Header = styled.h1`
+export const HeaderContainer = styled.div`
+	display: grid;
+	place-items: center;
+	width: 100vw;
+	position: fixed;
+	top: 15px;
+`
+
+export const Header = styled.h2`
 	font-family: VCR;
 	letter-spacing: 0.25rem;
 	text-align: center;

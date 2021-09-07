@@ -6,8 +6,12 @@ import {
 	DateStyle,
 	DateTimeContainer,
 	Header,
+	HeaderContainer,
 	Menu,
-	MenuItem, Playback, PlaybackContainer, PlaybackControl,
+	MenuItem,
+	Playback,
+	PlaybackContainer,
+	PlaybackControl,
 	TimeStyle
 } from "./styles"
 
@@ -107,8 +111,10 @@ export const Component = () => {
 
 	return (
 		<>
-			<Container>
+			<HeaderContainer>
 				<Header>Rehat's Virtual Portfolio Website</Header>
+			</HeaderContainer>
+			<Container>
 				<Menu>
 					{main.map((element) => {
 						return element === selected ? (
