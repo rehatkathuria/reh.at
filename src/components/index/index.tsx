@@ -25,14 +25,18 @@ enum MainMenu {
 	about = "about",
 	colophon = "colophon",
 	darkroom = "darkroom",
+	eff = "eff",
 	seafronts = "seafronts",
+	works = "works",
 }
 
 const main = [
 	MainMenu.about,
 	MainMenu.colophon,
 	MainMenu.darkroom,
+	MainMenu.eff,
 	MainMenu.seafronts,
+	MainMenu.works,
 ]
 
 export const Component = () => {
@@ -61,8 +65,14 @@ export const Component = () => {
 				case MainMenu.darkroom:
 					setSelected(MainMenu.colophon)
 					break
-				case MainMenu.seafronts:
+				case MainMenu.eff:
 					setSelected(MainMenu.darkroom)
+					break
+				case MainMenu.seafronts:
+					setSelected(MainMenu.eff)
+					break
+				case MainMenu.works:
+					setSelected(MainMenu.seafronts)
 					break
 			}
 		},
@@ -81,9 +91,15 @@ export const Component = () => {
 					setSelected(MainMenu.darkroom)
 					break
 				case MainMenu.darkroom:
+					setSelected(MainMenu.eff)
+					break
+				case MainMenu.eff:
 					setSelected(MainMenu.seafronts)
 					break
 				case MainMenu.seafronts:
+					setSelected(MainMenu.works)
+					break
+				case MainMenu.works:
 					break
 			}
 		},
