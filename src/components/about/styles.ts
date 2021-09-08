@@ -8,7 +8,7 @@ export const Container = styled.div`
 	width: 500px;
 `
 
-export const Blurb = styled.div`
+export const Blurb = styled.span`
 	color: ${(props) => props.theme.text};
 	font-family: VCR;
 	text-transform: uppercase;
