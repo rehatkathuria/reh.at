@@ -4,7 +4,7 @@ export const Blurb = styled.span`
 	color: ${(props) => props.theme.text};
 	font-family: VCR;
 	text-transform: uppercase;
-	line-height: 1.2rem;
+	line-height: 1.35rem;
 `
 
 export const BlurbHighlighted = styled(Blurb)`
