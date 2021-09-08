@@ -1,5 +1,5 @@
 import { FC } from "react"
-import { Container, Image } from "./styles"
+import { Container } from "./styles"
 import { P, Blurb, BlurbHighlighted } from "@typography/styles"
 
 export const Component: FC = () => {
