@@ -18,6 +18,7 @@ export const BlurbHighlighted = styled(Blurb)`
 	background: ${(props) => props.theme.text};
 	color: ${(props) => props.theme.background};
 	padding: 3px;
+	padding-left: 5px;
 	width: fit-content;
 `
 
