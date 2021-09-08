@@ -1,4 +1,5 @@
 import { Component as AboutComponent } from "@components/about"
+import { Component as ColophonComponent } from "@components/colophon"
 import { useState } from "react"
 import { useHotkeys } from "react-hotkeys-hook"
 import {
@@ -15,7 +16,7 @@ import {
 	Playback,
 	PlaybackContainer,
 	PlaybackControl,
-	TimeStyle
+	TimeStyle,
 } from "./styles"
 
 const formattedTime = () => {
@@ -160,6 +161,8 @@ export const Component = () => {
 		switch (activeMenu) {
 			case MainMenu.about:
 				return <AboutComponent />
+			case MainMenu.colophon:
+				return <ColophonComponent />
 			default:
 				return <></>
 		}

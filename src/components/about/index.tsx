@@ -1,6 +1,7 @@
 import { FC } from "react"
 import TextLoop from "react-text-loop"
-import { Blurb, BlurbHighlighted, Container, P } from "./styles"
+import { Container } from "./styles"
+import { P, Blurb, BlurbHighlighted } from "@typography/styles"
 
 const Loop: FC<{
 	delay?: number

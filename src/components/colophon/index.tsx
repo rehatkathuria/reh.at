@@ -1,0 +1,41 @@
+import { FC } from "react"
+import { Container } from "./styles"
+import { P, Blurb, BlurbHighlighted } from "@typography/styles"
+
+export const Component: FC = () => {
+	return (
+		<Container>
+			<Blurb>
+				This website was designed and built by me,{" "}
+				<BlurbHighlighted>Rehat Kathuria</BlurbHighlighted>, in London, England.
+			</Blurb>
+			<P />
+			<Blurb>
+				The hardware and software used consists of a Macbook Air, Visual Studio
+				Code, GIT and Yarn.
+			</Blurb>
+			<P />
+			<Blurb>
+				Photographs, unless otherwise stated, are shot on Kodak TX 400 using
+				either a Rolleiflex Type 5 or a Leica MA. The lenses on the cameras
+				consist of a Carl Zeiss Planar 75mm ƒ/3.5 and a Summaron-M 28mm ƒ/5.6,
+				respectively.
+			</Blurb>
+			<P />
+			<Blurb>
+				This website is built upon the work of many open-source projects,
+				including: Next.js, P5, React, Styled Components, Typescript and
+				Webpack.
+			</Blurb>
+			<P />
+			<Blurb>
+				There are no analytic trackers on this website and there never will be.
+			</Blurb>
+			<P />
+			<Blurb>
+				All content on this website is copyright protected under the Registered
+				Company N°: 10576119
+			</Blurb>
+		</Container>
+	)
+}
