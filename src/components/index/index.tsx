@@ -1,3 +1,4 @@
+import { Component as AboutComponent } from "@components/about"
 import { useState } from "react"
 import { useHotkeys } from "react-hotkeys-hook"
 import {
@@ -155,28 +156,36 @@ export const Component = () => {
 		)
 	}
 
+	const content = () => {
+		switch (activeMenu) {
+			case MainMenu.about:
+				return <AboutComponent />
+			default:
+				return <></>
+		}
+	}
+
 	return (
 		<>
 			<HeaderContainer>
 				<Header>Rehat's Virtual Portfolio Website</Header>
 			</HeaderContainer>
-			<Container>
-				<Menu>
-					{main.map((element) => {
-						return element === selected ? (
-							<MenuItem key={element}>
-								<ArrowContainer> {">"} </ArrowContainer>
-								{menuItemTitle(element)}
-							</MenuItem>
-						) : (
-							<MenuItem key={element}>
-								<ArrowContainer />
-								{menuItemTitle(element)}
-							</MenuItem>
-						)
-					})}
-				</Menu>
-			</Container>
+			<Menu>
+				{main.map((element) => {
+					return element === selected ? (
+						<MenuItem key={element}>
+							<ArrowContainer> {">"} </ArrowContainer>
+							{menuItemTitle(element)}
+						</MenuItem>
+					) : (
+						<MenuItem key={element}>
+							<ArrowContainer />
+							{menuItemTitle(element)}
+						</MenuItem>
+					)
+				})}
+			</Menu>
+			<Container>{content()}</Container>
 			<DateTimeContainer>
 				<TimeStyle>{timeString}</TimeStyle>
 				<DateStyle>{date}</DateStyle>
