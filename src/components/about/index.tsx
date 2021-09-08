@@ -4,7 +4,7 @@ import { Blurb, BlurbHighlighted, Container, P } from "./styles"
 
 const Loop: FC<{
 	delay?: number
-}> = (props) => {
+}> = (props: any) => {
 	return (
 		<TextLoop delay={props.delay} interval={4000}>
 			{props.children}
