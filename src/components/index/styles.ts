@@ -67,14 +67,16 @@ export const DateTimeContainer = styled.div`
 	position: absolute;
 `
 
-export const DateStyle = styled.h2`
+const VCREdgeOverlayTextStyle = styled.h2`
 	color: ${(props) => props.theme.text};
 	font-family: VCR;
 	text-transform: uppercase;
 	font-size: 1.3rem;
 `
 
-export const TimeStyle = styled(DateStyle)``
+export const DateStyle = styled(VCREdgeOverlayTextStyle)``
+
+export const TimeStyle = styled(VCREdgeOverlayTextStyle)``
 
 export const PlaybackContainer = styled.div`
 	display: grid;
@@ -85,8 +87,8 @@ export const PlaybackContainer = styled.div`
 	bottom: 20px;
 `
 
-export const PlaybackControl = styled(DateStyle)`
+export const PlaybackControl = styled(VCREdgeOverlayTextStyle)`
 	text-align: right;
 `
 
-export const Playback = styled(DateStyle)``
+export const Playback = styled(VCREdgeOverlayTextStyle)``
