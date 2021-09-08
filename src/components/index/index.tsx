@@ -1,5 +1,6 @@
 import { Component as AboutComponent } from "@components/about"
 import { Component as ColophonComponent } from "@components/colophon"
+import { Component as SeafrontsComponent } from "@components/seafronts"
 import { useState } from "react"
 import { useHotkeys } from "react-hotkeys-hook"
 import {
@@ -163,6 +164,8 @@ export const Component = () => {
 				return <AboutComponent />
 			case MainMenu.colophon:
 				return <ColophonComponent />
+			case MainMenu.seafronts:
+				return <SeafrontsComponent />
 			default:
 				return <></>
 		}
