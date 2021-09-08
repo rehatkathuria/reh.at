@@ -4,13 +4,17 @@ export const Container = styled.div`
 	height: 100vh;
 	width: 100vw;
 	display: grid;
-	place-items: start;
+	place-items: center;
 	align-content: center;
 	grid-gap: 20px;
 `
 
 export const Menu = styled.div`
 	text-transform: uppercase;
+	position: absolute;
+	height: 100vh;
+	display: grid;
+	align-content: center;
 `
 
 export const MenuItem = styled.div`
