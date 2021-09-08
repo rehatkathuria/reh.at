@@ -25,20 +25,17 @@ export const MenuItem = styled.div`
 	letter-spacing: 0.2rem;
 `
 
-export const MenuTitleActive = styled.h3`
-	background: ${(props) => props.theme.text};
-	color: ${(props) => props.theme.background};
-	font-family: VCR;
-	letter-spacing: 0.2rem;
-	padding: 4px;
-`
-
 export const MenuTitleInactive = styled.h3`
 	cursor: pointer;
 	color: ${(props) => props.theme.text};
 	font-family: VCR;
 	letter-spacing: 0.2rem;
-	padding: 4px;
+	padding: 5px 6px 6px 8px;
+`
+
+export const MenuTitleActive = styled(MenuTitleInactive)`
+	background: ${(props) => props.theme.text};
+	color: ${(props) => props.theme.background};
 `
 
 export const HeaderContainer = styled.div`
