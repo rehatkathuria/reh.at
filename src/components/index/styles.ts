@@ -66,6 +66,14 @@ export const DateTimeContainer = styled.div`
 	bottom: 20px;
 	position: absolute;
 `
+export const PlaybackContainer = styled.div`
+	display: grid;
+	grid-template-rows: auto auto;
+	grid-gap: 5px;
+	position: absolute;
+	right: 30px;
+	bottom: 20px;
+`
 
 const VCREdgeOverlayTextStyle = styled.h2`
 	color: ${(props) => props.theme.text};
@@ -77,15 +85,6 @@ const VCREdgeOverlayTextStyle = styled.h2`
 export const DateStyle = styled(VCREdgeOverlayTextStyle)``
 
 export const TimeStyle = styled(VCREdgeOverlayTextStyle)``
-
-export const PlaybackContainer = styled.div`
-	display: grid;
-	grid-template-rows: auto auto;
-	grid-gap: 5px;
-	position: absolute;
-	right: 30px;
-	bottom: 20px;
-`
 
 export const PlaybackControl = styled(VCREdgeOverlayTextStyle)`
 	text-align: right;
