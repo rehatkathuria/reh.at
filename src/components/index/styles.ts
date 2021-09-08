@@ -74,12 +74,7 @@ export const DateStyle = styled.h2`
 	font-size: 1.3rem;
 `
 
-export const TimeStyle = styled.h2`
-	color: ${(props) => props.theme.text};
-	font-family: VCR;
-	text-transform: uppercase;
-	font-size: 1.3rem;
-`
+export const TimeStyle = styled(DateStyle)``
 
 export const PlaybackContainer = styled.div`
 	display: grid;
@@ -90,17 +85,8 @@ export const PlaybackContainer = styled.div`
 	bottom: 20px;
 `
 
-export const PlaybackControl = styled.h2`
-	color: ${(props) => props.theme.text};
-	font-family: VCR;
-	font-size: 1.3rem;
+export const PlaybackControl = styled(DateStyle)`
 	text-align: right;
-	text-transform: uppercase;
 `
 
-export const Playback = styled.h2`
-	color: ${(props) => props.theme.text};
-	font-family: VCR;
-	font-size: 1.3rem;
-	text-transform: uppercase;
-`
+export const Playback = styled(DateStyle)``
