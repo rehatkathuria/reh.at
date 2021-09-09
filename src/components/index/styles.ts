@@ -101,7 +101,7 @@ export const HeaderContainer = styled.div`
 	place-items: center;
 	width: 100vw;
 	position: fixed;
-	top: 15px;
+	top: 0px;
 `
 
 export const Header = styled.h2`
@@ -110,9 +110,12 @@ export const Header = styled.h2`
 	text-align: center;
 	color: ${(props) => props.theme.text};
 	text-transform: uppercase;
+	padding: 15px 15px 15px 15px;
 	@media only screen and (max-width: 650px) {
 		line-height: 2rem;
 		font-size: 1.2rem;
+		color: ${(props) => props.theme.background};
+		background: ${(props) => props.theme.text};
 	}
 `
 
