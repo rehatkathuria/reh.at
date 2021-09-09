@@ -102,6 +102,9 @@ export const Header = styled.h2`
 	text-align: center;
 	color: ${(props) => props.theme.text};
 	text-transform: uppercase;
+	@media only screen and (max-width: 650px) {
+		line-height: 2rem;
+	}
 `
 
 export const ArrowContainer = styled.div`
