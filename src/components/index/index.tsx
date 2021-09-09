@@ -8,6 +8,8 @@ import {
 	Container,
 	DateStyle,
 	DateTimeContainer,
+	GrainContainer,
+	Grain,
 	Header,
 	HeaderContainer,
 	Menu,
@@ -173,6 +175,9 @@ export const Component = () => {
 
 	return (
 		<>
+			<GrainContainer>
+				<Grain />
+			</GrainContainer>
 			<HeaderContainer>
 				<Header>Rehat's Virtual Portfolio Website</Header>
 			</HeaderContainer>

@@ -1,4 +1,5 @@
-import styled from "styled-components"
+import { grain } from "@components/grain"
+import styled, { keyframes } from "styled-components"
 
 export const Container = styled.div`
 	height: 100vh;
@@ -7,6 +8,49 @@ export const Container = styled.div`
 	place-items: center;
 	align-content: center;
 	grid-gap: 20px;
+`
+
+export const staticGrain = keyframes`
+	0%, 100% {
+		transform: translate(0,0);
+	}
+	10% {
+		transform: translate(-5%,-10%);
+	}
+	30% {
+		transform: translate(3%,-15%);
+	}
+	50% {
+		transform: translate(12%,9%);
+	}
+	70% {
+		transform: translate(9%,4%);
+	}
+	90% {
+		transform: translate(-1%,7%);
+	}
+`
+
+export const GrainContainer = styled.div`
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	position: absolute;
+`
+
+export const Grain = styled.div`
+	content: "";
+	position: absolute;
+	width: 400vw;
+	height: 400vh;
+	left: -50vw;
+	top: -50vh;
+	background-image: url("${grain}");
+
+	&:after {
+		animation: ${staticGrain} 1.5s steps(6) infinite;
+	}
+	animation: ${staticGrain} 1.5s steps(6) infinite;
 `
 
 export const Menu = styled.div`
