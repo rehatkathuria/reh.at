@@ -1,7 +1,7 @@
 import { FC } from "react"
 import TextLoop from "react-text-loop"
 import { Container } from "./styles"
-import { P, Blurb, BlurbHighlighted, separator } from "@typography/styles"
+import { P, Blurb, BlurbHighlighted } from "@typography/styles"
 
 const Loop: FC<{
 	delay?: number
@@ -25,7 +25,6 @@ export const Component: FC = () => {
 
 	return (
 		<Container>
-			{separator()}
 			<P />
 			<Blurb>
 				I am
@@ -66,7 +65,6 @@ export const Component: FC = () => {
 				making fine art photographic prints.
 			</Blurb>
 			<P />
-			{separator()}
 		</Container>
 	)
 }
