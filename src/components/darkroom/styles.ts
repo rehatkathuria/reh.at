@@ -5,7 +5,7 @@ import { ContentContainer } from "@components/index/styles"
 export const Container = styled(ContentContainer)`
 	height: 100vh;
 	overflow: scroll;
-	padding: 36vh 0 36vh 0;
+	padding: 36vh 0 12vh 0;
 	@media only screen and (max-width: 500px) {
 		width: 100vw;
 		padding: 18vh 20px 18vh 20px;
