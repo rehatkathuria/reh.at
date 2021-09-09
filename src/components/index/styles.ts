@@ -102,6 +102,7 @@ export const HeaderContainer = styled.div`
 	width: 100vw;
 	position: fixed;
 	top: 0px;
+	z-index: 2;
 `
 
 export const Header = styled.h2`
