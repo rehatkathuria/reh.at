@@ -39,6 +39,7 @@ export const GrainContainer = styled.div`
 `
 
 export const Grain = styled.div`
+	animation: ${staticGrain} 1.5s steps(6) infinite;
 	content: "";
 	position: absolute;
 	width: 400vw;
@@ -46,11 +47,6 @@ export const Grain = styled.div`
 	left: -50vw;
 	top: -50vh;
 	background-image: url("${grain}");
-
-	&:after {
-		animation: ${staticGrain} 1.5s steps(6) infinite;
-	}
-	animation: ${staticGrain} 1.5s steps(6) infinite;
 `
 
 export const Menu = styled.div`
