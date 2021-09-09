@@ -130,6 +130,10 @@ export const VCREdgeOverlayTextStyle = styled.h2`
 	font-family: VCR;
 	text-transform: uppercase;
 	font-size: 1.3rem;
+	@media only screen and (max-width: 900px) {
+		color: ${(props) => props.theme.background};
+		background: ${(props) => props.theme.text};
+	}
 `
 
 export const PlaybackControl = styled(VCREdgeOverlayTextStyle)`
