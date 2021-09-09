@@ -31,7 +31,7 @@ export const Component: FC = () => {
 				<Loop>
 					{ingredients.map((item) => (
 						<div key={item}>
-							<BlurbHighlighted>{item}</BlurbHighlighted>
+							<BlurbHighlighted>{item}.</BlurbHighlighted>
 						</div>
 					))}
 				</Loop>
