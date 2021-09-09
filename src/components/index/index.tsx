@@ -73,7 +73,8 @@ export const Component = () => {
 
 	useHotkeys(
 		"up",
-		() => {
+		(keyboardEvent: any) => {
+			keyboardEvent.preventDefault()
 			switch (selected) {
 				case MainMenu.about:
 					break
@@ -100,7 +101,8 @@ export const Component = () => {
 
 	useHotkeys(
 		"down",
-		() => {
+		(keyboardEvent: any) => {
+			keyboardEvent.preventDefault()
 			switch (selected) {
 				case MainMenu.about:
 					setSelected(MainMenu.colophon)
