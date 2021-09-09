@@ -1,3 +1,4 @@
+import { Clock } from "@components/clock"
 import { Component as AboutComponent } from "@components/about"
 import { Component as ColophonComponent } from "@components/colophon"
 import { Component as DarkroomComponent } from "@components/darkroom"
@@ -8,8 +9,6 @@ import { useHotkeys } from "react-hotkeys-hook"
 import {
 	ArrowContainer,
 	Container,
-	DateStyle,
-	DateTimeContainer,
 	Header,
 	HeaderContainer,
 	Menu,
@@ -19,17 +18,8 @@ import {
 	Playback,
 	PlaybackContainer,
 	PlaybackControl,
-	TimeStyle,
 } from "./styles"
 import useWindowDimensions from "@hooks/useWindowDimensions"
-
-const formattedTime = () => {
-	return new Date().toLocaleTimeString("en-US", {
-		hour: "2-digit",
-		minute: "2-digit",
-		second: "2-digit",
-	})
-}
 
 enum MainMenu {
 	about = "about",
@@ -49,21 +39,10 @@ const main = [
 ]
 
 export const Component = () => {
-	const date = new Date().toLocaleDateString("en-US", {
-		year: "numeric",
-		month: "short",
-		day: "numeric",
-	})
-
 	const [selected, setSelected] = useState(MainMenu.about)
 	const [activeMenu, setActiveMenu] = useState<MainMenu>(MainMenu.about)
-	const [timeString, setTimeString] = useState(formattedTime())
 	const { width } = useWindowDimensions()
 	const widthToToggleMenuVisibilityOn = 900
-
-	setInterval(() => {
-		if (setTimeString !== undefined) setTimeString(formattedTime())
-	}, 1000)
 
 	const activateCurrentSelection = () => {
 		if (width === null) return
@@ -204,10 +183,7 @@ export const Component = () => {
 				})}
 			</Menu>
 			<Container>{content()}</Container>
-			<DateTimeContainer>
-				<TimeStyle>{timeString}</TimeStyle>
-				<DateStyle>{date}</DateStyle>
-			</DateTimeContainer>
+			<Clock />
 			<PlaybackContainer>
 				<PlaybackControl>Play</PlaybackControl>
 				<Playback>00:00:00</Playback>
