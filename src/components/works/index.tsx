@@ -1,6 +1,6 @@
 import { FC } from "react"
 import { ContentContainer } from "@components/index/styles"
-import { P, Blurb, BlurbHighlighted, separator } from "@typography/styles"
+import { P, Blurb, BlurbHighlighted } from "@typography/styles"
 import { A } from "./styles"
 
 export const Component: FC = () => {
