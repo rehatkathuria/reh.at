@@ -8,8 +8,6 @@ import {
 	Container,
 	DateStyle,
 	DateTimeContainer,
-	GrainContainer,
-	Grain,
 	Header,
 	HeaderContainer,
 	Menu,
