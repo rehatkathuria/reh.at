@@ -59,6 +59,9 @@ export const Menu = styled.div`
 	height: 100vh;
 	display: grid;
 	align-content: center;
+	@media only screen and (max-width: 900px) {
+		display: none;
+	}
 `
 
 export const MenuItem = styled.div`
