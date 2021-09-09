@@ -1,5 +1,6 @@
 import { Component as AboutComponent } from "@components/about"
 import { Component as ColophonComponent } from "@components/colophon"
+import { Component as DarkroomComponent } from "@components/darkroom"
 import { Component as SeafrontsComponent } from "@components/seafronts"
 import { Component as WorksComponent } from "@components/works"
 import { useState } from "react"
@@ -165,6 +166,8 @@ export const Component = () => {
 				return <AboutComponent />
 			case MainMenu.colophon:
 				return <ColophonComponent />
+			case MainMenu.darkroom:
+				return <DarkroomComponent />
 			case MainMenu.seafronts:
 				return <SeafrontsComponent />
 			case MainMenu.works:
