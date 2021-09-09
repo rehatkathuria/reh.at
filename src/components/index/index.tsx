@@ -162,12 +162,9 @@ export const Component = () => {
 		}
 	}
 
-	return (
-		<>
-			<HeaderContainer>
-				<Header>Rehat's Virtual Portfolio Website</Header>
-			</HeaderContainer>
-			<Menu>
+	const menu = () => {
+		return (
+			<>
 				{main.map((element) => {
 					return element === selected ? (
 						<MenuItem key={element}>
@@ -181,7 +178,16 @@ export const Component = () => {
 						</MenuItem>
 					)
 				})}
-			</Menu>
+			</>
+		)
+	}
+
+	return (
+		<>
+			<HeaderContainer>
+				<Header>Rehat's Virtual Portfolio Website</Header>
+			</HeaderContainer>
+			<Menu>{menu()}</Menu>
 			<Container>{content()}</Container>
 			<Clock />
 			<PlaybackContainer>
