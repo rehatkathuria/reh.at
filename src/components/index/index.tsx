@@ -21,6 +21,7 @@ import {
 	PlaybackControl,
 	TimeStyle,
 } from "./styles"
+import useWindowDimensions from "@hooks/useWindowDimensions"
 
 const formattedTime = () => {
 	return new Date().toLocaleTimeString("en-US", {
@@ -57,16 +58,22 @@ export const Component = () => {
 	const [selected, setSelected] = useState(MainMenu.about)
 	const [activeMenu, setActiveMenu] = useState<MainMenu>(MainMenu.about)
 	const [timeString, setTimeString] = useState(formattedTime())
+	const { width } = useWindowDimensions()
+	const widthToToggleMenuVisibilityOn = 900
 
 	setInterval(() => {
 		if (setTimeString !== undefined) setTimeString(formattedTime())
 	}, 1000)
 
 	const activateCurrentSelection = () => {
+		if (width === null) return
+		if (width < widthToToggleMenuVisibilityOn) return
 		setActiveMenu(selected)
 	}
 
 	const clearCurrentSelection = () => {
+		if (width === null) return
+		if (width < widthToToggleMenuVisibilityOn) return
 		setSelected(activeMenu)
 	}
 
@@ -74,6 +81,8 @@ export const Component = () => {
 		"up",
 		(keyboardEvent: any) => {
 			keyboardEvent.preventDefault()
+			if (width === null) return
+			if (width < widthToToggleMenuVisibilityOn) return
 			switch (selected) {
 				case MainMenu.about:
 					break
@@ -92,13 +101,15 @@ export const Component = () => {
 			}
 		},
 		{ keydown: true },
-		[selected],
+		[selected, width],
 	)
 
 	useHotkeys(
 		"down",
 		(keyboardEvent: any) => {
 			keyboardEvent.preventDefault()
+			if (width === null) return
+			if (width < widthToToggleMenuVisibilityOn) return
 			switch (selected) {
 				case MainMenu.about:
 					setSelected(MainMenu.colophon)
@@ -117,7 +128,7 @@ export const Component = () => {
 			}
 		},
 		{ keydown: true },
-		[selected],
+		[selected, width],
 	)
 
 	useHotkeys("enter", activateCurrentSelection, { keydown: true }, [
