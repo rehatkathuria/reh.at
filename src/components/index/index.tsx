@@ -175,9 +175,6 @@ export const Component = () => {
 
 	return (
 		<>
-			<GrainContainer>
-				<Grain />
-			</GrainContainer>
 			<HeaderContainer>
 				<Header>Rehat's Virtual Portfolio Website</Header>
 			</HeaderContainer>
