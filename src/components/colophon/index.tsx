@@ -1,10 +1,12 @@
 import { FC } from "react"
 import { Container } from "./styles"
-import { P, Blurb, BlurbHighlighted } from "@typography/styles"
+import { P, Blurb, BlurbHighlighted, separator } from "@typography/styles"
 
 export const Component: FC = () => {
 	return (
 		<Container>
+			{separator()}
+			<P />
 			<Blurb>
 				This website was designed and built by Rehat Kathuria, in London,
 				England.
@@ -26,6 +28,8 @@ export const Component: FC = () => {
 				consist of a Carl Zeiss Planar 75mm ƒ/3.5 and a Summaron-M 28mm ƒ/5.6,
 				respectively.
 			</Blurb>
+			<P />
+			{separator()}
 			<P />
 			<Blurb>
 				All content on this website is copyright protected under the Registered
