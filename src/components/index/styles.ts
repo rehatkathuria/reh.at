@@ -51,6 +51,11 @@ export const Grain = styled.div`
 
 export const ContentContainer = styled.div`
 	width: 500px;
+	::-webkit-scrollbar {
+		display: none;
+	}
+	-ms-overflow-style: none;
+	scrollbar-width: none;
 	@media only screen and (max-width: 500px) {
 		width: 85vw;
 	}
