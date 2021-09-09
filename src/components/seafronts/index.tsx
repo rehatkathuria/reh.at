@@ -1,10 +1,10 @@
 import { FC } from "react"
-import { Container } from "./styles"
+import { ContentContainer } from "@components/index/styles"
 import { P, Blurb, BlurbHighlighted, separator } from "@typography/styles"
 
 export const Component: FC = () => {
 	return (
-		<Container>
+		<ContentContainer>
 			{separator()}
 			<P />
 			<Blurb>
@@ -45,6 +45,6 @@ export const Component: FC = () => {
 			<Blurb>ISBN: #9781999963484</Blurb>
 			<P />
 			<Blurb>British Library Unique Identifier: BLL01018859631</Blurb>
-		</Container>
+		</ContentContainer>
 	)
 }

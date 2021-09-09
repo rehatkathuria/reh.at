@@ -49,6 +49,13 @@ export const Grain = styled.div`
 	background-image: url("${grain}");
 `
 
+export const ContentContainer = styled.div`
+	width: 500px;
+	@media only screen and (max-width: 500px) {
+		width: 85vw;
+	}
+`
+
 export const Menu = styled.div`
 	text-transform: uppercase;
 	position: absolute;

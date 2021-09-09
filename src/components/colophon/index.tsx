@@ -1,10 +1,10 @@
 import { FC } from "react"
-import { Container } from "./styles"
+import { ContentContainer } from "@components/index/styles"
 import { P, Blurb, BlurbHighlighted, separator } from "@typography/styles"
 
 export const Component: FC = () => {
 	return (
-		<Container>
+		<ContentContainer>
 			{separator()}
 			<P />
 			<Blurb>
@@ -35,6 +35,6 @@ export const Component: FC = () => {
 				All content on this website is copyright protected under the Registered
 				Company N°: 10576119
 			</Blurb>
-		</Container>
+		</ContentContainer>
 	)
 }

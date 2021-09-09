@@ -1,6 +1,6 @@
 import { FC } from "react"
 import TextLoop from "react-text-loop"
-import { Container } from "./styles"
+import { ContentContainer } from "@components/index/styles"
 import { P, Blurb, BlurbHighlighted } from "@typography/styles"
 
 const Loop: FC<{
@@ -24,7 +24,7 @@ export const Component: FC = () => {
 	const listening = ["BBC Radio 4", "99% Invisible", "The Daily"]
 
 	return (
-		<Container>
+		<ContentContainer>
 			<P />
 			<Blurb>
 				I am
@@ -65,6 +65,6 @@ export const Component: FC = () => {
 				making fine art photographic prints.
 			</Blurb>
 			<P />
-		</Container>
+		</ContentContainer>
 	)
 }
