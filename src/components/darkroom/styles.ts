@@ -9,6 +9,5 @@ export const Container = styled(ContentContainer)`
 	@media only screen and (max-width: 500px) {
 		width: 100vw;
 		padding: 18vh 20px 18vh 20px;
-		border: 2px dashed red;
 	}
 `

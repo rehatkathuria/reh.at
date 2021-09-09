@@ -61,7 +61,6 @@ export const ContentContainer = styled.div`
 		height: 100vh;
 		width: 100vw;
 		padding: 18vh 20px 18vh 20px;
-		border: 2px dashed red;
 	}
 `
 
