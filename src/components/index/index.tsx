@@ -43,7 +43,6 @@ const main = [
 	MainMenu.about,
 	MainMenu.colophon,
 	MainMenu.darkroom,
-	MainMenu.eff,
 	MainMenu.seafronts,
 	MainMenu.works,
 ]
@@ -84,11 +83,8 @@ export const Component = () => {
 				case MainMenu.darkroom:
 					setSelected(MainMenu.colophon)
 					break
-				case MainMenu.eff:
-					setSelected(MainMenu.darkroom)
-					break
 				case MainMenu.seafronts:
-					setSelected(MainMenu.eff)
+					setSelected(MainMenu.darkroom)
 					break
 				case MainMenu.works:
 					setSelected(MainMenu.seafronts)
@@ -111,9 +107,6 @@ export const Component = () => {
 					setSelected(MainMenu.darkroom)
 					break
 				case MainMenu.darkroom:
-					setSelected(MainMenu.eff)
-					break
-				case MainMenu.eff:
 					setSelected(MainMenu.seafronts)
 					break
 				case MainMenu.seafronts:
