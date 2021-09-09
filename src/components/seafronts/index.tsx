@@ -11,8 +11,8 @@ export const Component: FC = () => {
 			</Blurb>
 			<P />
 			<Blurb>
-				Dedicated to Markus Mcturk, for instilling in me, during my formative
-				years, a yearning to learn.
+				Dedicated to <BlurbHighlighted>Markus Mcturk</BlurbHighlighted>, for
+				instilling in me, during my formative years, a yearning to learn.
 			</Blurb>
 			<P />
 			<Blurb>
