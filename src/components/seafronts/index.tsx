@@ -1,12 +1,10 @@
 import { FC } from "react"
 import { ContentContainer } from "@components/index/styles"
-import { P, Blurb, BlurbHighlighted, separator } from "@typography/styles"
+import { P, Blurb, BlurbHighlighted } from "@typography/styles"
 
 export const Component: FC = () => {
 	return (
 		<ContentContainer>
-			{separator()}
-			<P />
 			<Blurb>
 				A photographic exploration of the English coastline, Seafronts is my
 				debut book shot entirely on Medium Format film.
@@ -33,8 +31,6 @@ export const Component: FC = () => {
 				There is a single copy available at The British Library for archival
 				purposes.
 			</Blurb>
-			<P />
-			{separator()}
 			<P />
 			<Blurb>200 x 150 mm</Blurb>
 			<P />

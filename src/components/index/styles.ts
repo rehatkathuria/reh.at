@@ -56,8 +56,12 @@ export const ContentContainer = styled.div`
 	}
 	-ms-overflow-style: none;
 	scrollbar-width: none;
+	overflow: scroll;
 	@media only screen and (max-width: 500px) {
-		width: 85vw;
+		height: 100vh;
+		width: 100vw;
+		padding: 18vh 20px 18vh 20px;
+		border: 2px dashed red;
 	}
 `
 
@@ -109,6 +113,7 @@ export const Header = styled.h2`
 	text-transform: uppercase;
 	@media only screen and (max-width: 650px) {
 		line-height: 2rem;
+		font-size: 1.2rem;
 	}
 `
 
@@ -133,6 +138,9 @@ export const VCREdgeOverlayTextStyle = styled.h2`
 	@media only screen and (max-width: 900px) {
 		color: ${(props) => props.theme.background};
 		background: ${(props) => props.theme.text};
+	}
+	@media only screen and (max-width: 500px) {
+		font-size: 18px;
 	}
 `
 

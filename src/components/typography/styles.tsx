@@ -17,7 +17,3 @@ export const BlurbHighlighted = styled(Blurb)`
 export const P = styled.p`
 	margin-bottom: 0.7em;
 `
-
-export const separator = () => {
-	return <Blurb>=====================================================</Blurb>
-}

@@ -6,7 +6,7 @@ export const Video = styled.video`
 	border: 5px solid white;
 	margin: 10px 0 10px 0;
 	@media only screen and (max-width: 650px) {
-		height: 80vw;
-		width: 80vw;
+		height: calc(90vw - 20px);
+		width: calc(90vw - 20px);
 	}
 `
