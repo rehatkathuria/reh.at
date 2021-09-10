@@ -40,7 +40,7 @@ export const MobileMenu = styled.div`
 	align-content: center;
 	background: ${(props) => props.theme.background};
 	display: grid;
-	place-items: center;
+	place-items: baseline;
 	text-transform: uppercase;
 	width: 100vw;
 	height: 100vh;
