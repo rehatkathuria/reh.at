@@ -13,10 +13,6 @@ export const SilverHalide = () => {
 	const globe = () => {
 		return (
 			<>
-				{/* <mesh position={[0, 0, 0]}>
-					<sphereGeometry args={[0.75, 20, 20]} />
-					<meshStandardMaterial color={theme.text} />
-				</mesh> */}
 				<mesh>
 					<dodecahedronGeometry args={[2.75, 1]} />
 					<meshStandardMaterial color={"red"} />
