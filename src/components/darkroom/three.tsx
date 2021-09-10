@@ -1,10 +1,7 @@
 import { OrbitControls } from "@react-three/drei"
-import { useFrame } from "@react-three/fiber"
 import { EffectComposer, Noise } from "@react-three/postprocessing"
 import { Theme } from "@themes/index"
-import { randomInt } from "@utilities/math"
 import { useTheme } from "styled-components"
-import { useRef } from "react"
 import { Canvas } from "./styles"
 
 export const SilverHalide = () => {
