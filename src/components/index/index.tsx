@@ -38,9 +38,9 @@ const main = [
 	MainMenu.works,
 ]
 
-export const Component = () => {
 	const [selected, setSelected] = useState(MainMenu.about)
 	const [activeMenu, setActiveMenu] = useState<MainMenu>(MainMenu.about)
+export default () => {
 	const { width } = useWindowDimensions()
 	const widthToToggleMenuVisibilityOn = 900
 

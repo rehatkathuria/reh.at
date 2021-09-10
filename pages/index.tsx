@@ -1,8 +1,7 @@
 import dynamic from "next/dynamic"
 
-// @ts-ignore
-const Dynamic = dynamic(() =>
-	import("@components/index").then((mod) => mod.Component),
-)
+const Dynamic = dynamic(() => import("@components/index"), {
+	ssr: false,
+})
 
 export default Dynamic
