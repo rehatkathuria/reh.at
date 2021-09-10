@@ -131,6 +131,7 @@ export const PlaybackContainer = styled.div`
 	position: absolute;
 	right: 30px;
 	bottom: 20px;
+	justify-items: end;
 `
 
 export const VCREdgeOverlayTextStyle = styled.h2`
@@ -138,6 +139,8 @@ export const VCREdgeOverlayTextStyle = styled.h2`
 	font-family: VCR;
 	text-transform: uppercase;
 	font-size: 1.3rem;
+	padding: 0 5px 0 5px;
+	width: fit-content;
 	@media only screen and (max-width: 900px) {
 		color: ${(props) => props.theme.background};
 		background: ${(props) => props.theme.text};
