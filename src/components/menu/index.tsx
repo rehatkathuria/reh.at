@@ -59,6 +59,7 @@ export const Component: FC<IMenu> = (props) => {
 
 	const clearCurrentSelection = () => {
 		if (width === null) return
+		if (props.activeMenu === selected) props.onIsMobileMenuOpenChange(false)
 		setSelected(props.activeMenu)
 	}
 
@@ -176,12 +177,19 @@ export const Component: FC<IMenu> = (props) => {
 
 	const menuItemTitle = (menu: MainMenu) => {
 		return menu === props.activeMenu ? (
-			<MenuTitleActive> {menu} </MenuTitleActive>
+			<MenuTitleActive
+				onClick={() => {
+					props.onIsMobileMenuOpenChange(false)
+				}}
+			>
+				{menu}
+			</MenuTitleActive>
 		) : (
 			<MenuTitleInactive
 				onClick={() => {
 					setSelected(menu)
 					props.onActiveMenuChange(menu)
+					props.onIsMobileMenuOpenChange(false)
 				}}
 			>
 				{menu}
@@ -191,7 +199,13 @@ export const Component: FC<IMenu> = (props) => {
 
 	const mobileMenuItemTitle = (menu: MainMenu) => {
 		return menu === props.activeMenu ? (
-			<MobileMenuTitleActive> {menu} </MobileMenuTitleActive>
+			<MobileMenuTitleActive
+				onClick={() => {
+					props.onIsMobileMenuOpenChange(false)
+				}}
+			>
+				{menu}
+			</MobileMenuTitleActive>
 		) : (
 			<MobileMenuTitleInactive
 				onClick={() => {
