@@ -8,6 +8,9 @@ export const DateTimeContainer = styled.div`
 	left: 25px;
 	bottom: 20px;
 	position: absolute;
+	@media only screen and (max-width: 500px) {
+		left: 20px;
+	}
 `
 
 export const DateStyle = styled(VCREdgeOverlayTextStyle)``
