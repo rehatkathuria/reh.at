@@ -36,9 +36,10 @@ export interface IMenu {
 	onActiveMenuChange: Dispatch<SetStateAction<MainMenu>>
 }
 
+export const widthToToggleMenuVisibilityOn = 900
+
 export const Component: FC<IMenu> = (props) => {
 	const { width } = useWindowDimensions()
-	const widthToToggleMenuVisibilityOn = 900
 	const [selected, setSelected] = useState(MainMenu.about)
 
 	useEffect(() => {

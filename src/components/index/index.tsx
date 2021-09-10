@@ -14,9 +14,15 @@ import {
 	PlaybackContainer,
 	PlaybackControl,
 } from "./styles"
-import { MainMenu, Component as Menu } from "@components/menu"
+import {
+	widthToToggleMenuVisibilityOn,
+	MainMenu,
+	Component as Menu,
+} from "@components/menu"
+import useWindowDimensions from "@hooks/useWindowDimensions"
 
 export default () => {
+	const { width } = useWindowDimensions()
 	const [activeMenu, setActiveMenu] = useState<MainMenu>(MainMenu.about)
 	const [isMobileMenuOpen, setIsMenuMobileOpen] = useState(false)
 
@@ -47,6 +53,7 @@ export default () => {
 			/>
 			<HeaderContainer
 				onClick={() => {
+					if (width !== null && width > widthToToggleMenuVisibilityOn) return
 					setIsMenuMobileOpen(isMobileMenuOpen ? false : true)
 				}}
 			>
