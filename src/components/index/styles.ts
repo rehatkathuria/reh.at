@@ -95,10 +95,13 @@ export const PlaybackContainer = styled.div`
 	display: grid;
 	grid-template-rows: auto auto;
 	grid-gap: 5px;
-	position: absolute;
+	position: fixed;
 	right: 30px;
 	bottom: 20px;
 	justify-items: end;
+	@media only screen and (max-width: 500px) {
+		bottom: calc(1rem + env(safe-area-inset-bottom));
+	}
 `
 
 export const VCREdgeOverlayTextStyle = styled.h2`

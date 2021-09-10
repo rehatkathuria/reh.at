@@ -7,9 +7,10 @@ export const DateTimeContainer = styled.div`
 	grid-gap: 5px;
 	left: 25px;
 	bottom: 20px;
-	position: absolute;
+	position: fixed;
 	@media only screen and (max-width: 500px) {
 		left: 20px;
+		bottom: calc(1rem + env(safe-area-inset-bottom));
 	}
 `
 
