@@ -71,6 +71,10 @@ export const HeaderContainer = styled.div`
 	position: fixed;
 	top: 0px;
 	z-index: 2;
+	@media only screen and (max-width: 900px) {
+		background: ${(props) => props.theme.text};
+		cursor: pointer;
+	}
 `
 
 export const Header = styled.h2`
@@ -80,11 +84,10 @@ export const Header = styled.h2`
 	color: ${(props) => props.theme.text};
 	text-transform: uppercase;
 	padding: 15px 15px 15px 15px;
-	@media only screen and (max-width: 650px) {
+	@media only screen and (max-width: 900px) {
 		line-height: 2rem;
 		font-size: 1.2rem;
 		color: ${(props) => props.theme.background};
-		background: ${(props) => props.theme.text};
 	}
 `
 

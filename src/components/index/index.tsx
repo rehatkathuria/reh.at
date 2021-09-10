@@ -18,6 +18,7 @@ import { MainMenu, Component as Menu } from "@components/menu"
 
 export default () => {
 	const [activeMenu, setActiveMenu] = useState<MainMenu>(MainMenu.about)
+	const [isMobileMenuOpen, setIsMenuMobileOpen] = useState(false)
 
 	const content = () => {
 		switch (activeMenu) {
@@ -38,8 +39,17 @@ export default () => {
 
 	return (
 		<>
-			<Menu activeMenu={activeMenu} onActiveMenuChange={setActiveMenu} />
-			<HeaderContainer>
+			<Menu
+				isMobileMenuOpen={isMobileMenuOpen}
+				onIsMobileMenuOpenChange={setIsMenuMobileOpen}
+				activeMenu={activeMenu}
+				onActiveMenuChange={setActiveMenu}
+			/>
+			<HeaderContainer
+				onClick={() => {
+					setIsMenuMobileOpen(isMobileMenuOpen ? false : true)
+				}}
+			>
 				<Header>Rehat's Virtual Portfolio Website</Header>
 			</HeaderContainer>
 			<Container>{content()}</Container>

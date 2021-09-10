@@ -35,3 +35,23 @@ export const MenuTitleActive = styled(MenuTitleInactive)`
 	background: ${(props) => props.theme.text};
 	color: ${(props) => props.theme.background};
 `
+
+export const MobileMenu = styled.div`
+	align-content: center;
+	background: ${(props) => props.theme.background};
+	display: grid;
+	place-items: center;
+	text-transform: uppercase;
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	z-index: 100;
+`
+
+export const MobileMenuTitleInactive = styled(MenuTitleInactive)`
+	font-size: 7vw;
+`
+
+export const MobileMenuTitleActive = styled(MenuTitleActive)`
+	font-size: 7vw;
+`

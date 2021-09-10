@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, FC, useState } from "react"
+import { Dispatch, SetStateAction, FC, useState, useEffect } from "react"
 import { useHotkeys } from "react-hotkeys-hook"
 import {
 	ArrowContainer,
@@ -6,6 +6,9 @@ import {
 	MenuItem,
 	MenuTitleActive,
 	MenuTitleInactive,
+	MobileMenuTitleActive,
+	MobileMenuTitleInactive,
+	MobileMenu,
 } from "./styles"
 import useWindowDimensions from "@hooks/useWindowDimensions"
 
@@ -27,6 +30,8 @@ const main = [
 ]
 
 export interface IMenu {
+	isMobileMenuOpen: boolean
+	onIsMobileMenuOpenChange: Dispatch<boolean>
 	activeMenu: MainMenu
 	onActiveMenuChange: Dispatch<SetStateAction<MainMenu>>
 }
@@ -36,15 +41,23 @@ export const Component: FC<IMenu> = (props) => {
 	const widthToToggleMenuVisibilityOn = 900
 	const [selected, setSelected] = useState(MainMenu.about)
 
+	useEffect(() => {
+		if (width === null) return
+		if (
+			props.isMobileMenuOpen === true &&
+			width > widthToToggleMenuVisibilityOn
+		)
+			props.onIsMobileMenuOpenChange(false)
+	}, [width])
+
 	const activateCurrentSelection = () => {
 		if (width === null) return
-		if (width < widthToToggleMenuVisibilityOn) return
 		props.onActiveMenuChange(selected)
+		props.onIsMobileMenuOpenChange(false)
 	}
 
 	const clearCurrentSelection = () => {
 		if (width === null) return
-		if (width < widthToToggleMenuVisibilityOn) return
 		setSelected(props.activeMenu)
 	}
 
@@ -53,7 +66,6 @@ export const Component: FC<IMenu> = (props) => {
 		(keyboardEvent: any) => {
 			keyboardEvent.preventDefault()
 			if (width === null) return
-			if (width < widthToToggleMenuVisibilityOn) return
 			switch (selected) {
 				case MainMenu.about:
 					break
@@ -80,7 +92,6 @@ export const Component: FC<IMenu> = (props) => {
 		(keyboardEvent: any) => {
 			keyboardEvent.preventDefault()
 			if (width === null) return
-			if (width < widthToToggleMenuVisibilityOn) return
 			switch (selected) {
 				case MainMenu.about:
 					setSelected(MainMenu.colophon)
@@ -142,6 +153,26 @@ export const Component: FC<IMenu> = (props) => {
 		)
 	}
 
+	const mobileMenu = () => {
+		return (
+			<>
+				{main.map((element) => {
+					return element === selected ? (
+						<MenuItem key={element}>
+							<ArrowContainer> {">"} </ArrowContainer>
+							{mobileMenuItemTitle(element)}
+						</MenuItem>
+					) : (
+						<MenuItem key={element}>
+							<ArrowContainer />
+							{mobileMenuItemTitle(element)}
+						</MenuItem>
+					)
+				})}
+			</>
+		)
+	}
+
 	const menuItemTitle = (menu: MainMenu) => {
 		return menu === props.activeMenu ? (
 			<MenuTitleActive> {menu} </MenuTitleActive>
@@ -157,5 +188,26 @@ export const Component: FC<IMenu> = (props) => {
 		)
 	}
 
-	return <Menu>{menu()}</Menu>
+	const mobileMenuItemTitle = (menu: MainMenu) => {
+		return menu === props.activeMenu ? (
+			<MobileMenuTitleActive> {menu} </MobileMenuTitleActive>
+		) : (
+			<MobileMenuTitleInactive
+				onClick={() => {
+					setSelected(menu)
+					props.onActiveMenuChange(menu)
+					props.onIsMobileMenuOpenChange(false)
+				}}
+			>
+				{menu}
+			</MobileMenuTitleInactive>
+		)
+	}
+
+	return (
+		<>
+			<Menu>{menu()}</Menu>
+			{props.isMobileMenuOpen ? <MobileMenu>{mobileMenu()}</MobileMenu> : <></>}
+		</>
+	)
 }
