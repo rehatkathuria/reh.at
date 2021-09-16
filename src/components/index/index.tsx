@@ -4,8 +4,7 @@ import { Component as ColophonComponent } from "@components/colophon"
 import { Component as DarkroomComponent } from "@components/darkroom"
 import { Component as SeafrontsComponent } from "@components/seafronts"
 import { Component as WorksComponent } from "@components/works"
-import { useState } from "react"
-import { useHotkeys } from "react-hotkeys-hook"
+import { useEffect, useState } from "react"
 import {
 	Container,
 	Header,
@@ -17,14 +16,24 @@ import {
 import {
 	widthToToggleMenuVisibilityOn,
 	MainMenu,
+	menuForPath,
 	Component as Menu,
 } from "@components/menu"
 import useWindowDimensions from "@hooks/useWindowDimensions"
+import { useRouter } from "next/router"
 
 export default () => {
+	const router = useRouter()
 	const { width } = useWindowDimensions()
-	const [activeMenu, setActiveMenu] = useState<MainMenu>(MainMenu.about)
+	const [activeMenu, setActiveMenu] = useState<MainMenu>(
+		menuForPath(router.asPath),
+	)
 	const [isMobileMenuOpen, setIsMenuMobileOpen] = useState(false)
+
+	useEffect(() => {
+		if (router.asPath === "/") router.push("/about")
+		else setActiveMenu(menuForPath(router.asPath))
+	}, [router])
 
 	const content = () => {
 		switch (activeMenu) {

@@ -11,6 +11,7 @@ import {
 	MobileMenu,
 } from "./styles"
 import useWindowDimensions from "@hooks/useWindowDimensions"
+import { useRouter } from "next/router"
 
 export enum MainMenu {
 	about = "about",
@@ -29,6 +30,40 @@ const main = [
 	MainMenu.works,
 ]
 
+export const menuForPath = (path: string) => {
+	switch (path) {
+		case "/about":
+			return MainMenu.about
+		case "/colophon":
+			return MainMenu.colophon
+		case "/darkroom":
+			return MainMenu.darkroom
+		case "/seafronts":
+			return MainMenu.seafronts
+		case "/works":
+			return MainMenu.works
+		default:
+			return MainMenu.about
+	}
+}
+
+export const pathForMenu = (menu: MainMenu) => {
+	switch (menu) {
+		case MainMenu.about:
+			return "/about"
+		case MainMenu.colophon:
+			return "/colophon"
+		case MainMenu.darkroom:
+			return "/darkroom"
+		case MainMenu.seafronts:
+			return "/seafronts"
+		case MainMenu.works:
+			return "/works"
+		default:
+			return MainMenu.about
+	}
+}
+
 export interface IMenu {
 	isMobileMenuOpen: boolean
 	onIsMobileMenuOpenChange: Dispatch<boolean>
@@ -39,8 +74,9 @@ export interface IMenu {
 export const widthToToggleMenuVisibilityOn = 900
 
 export const Component: FC<IMenu> = (props) => {
+	const router = useRouter()
 	const { width } = useWindowDimensions()
-	const [selected, setSelected] = useState(MainMenu.about)
+	const [selected, setSelected] = useState(menuForPath(router.asPath))
 
 	useEffect(() => {
 		if (width === null) return
@@ -53,8 +89,7 @@ export const Component: FC<IMenu> = (props) => {
 
 	const activateCurrentSelection = () => {
 		if (width === null) return
-		props.onActiveMenuChange(selected)
-		props.onIsMobileMenuOpenChange(false)
+		router.push(pathForMenu(selected))
 	}
 
 	const clearCurrentSelection = () => {
@@ -187,6 +222,7 @@ export const Component: FC<IMenu> = (props) => {
 		) : (
 			<MenuTitleInactive
 				onClick={() => {
+					router.push(pathForMenu(menu))
 					setSelected(menu)
 					props.onActiveMenuChange(menu)
 					props.onIsMobileMenuOpenChange(false)
@@ -209,6 +245,7 @@ export const Component: FC<IMenu> = (props) => {
 		) : (
 			<MobileMenuTitleInactive
 				onClick={() => {
+					router.push(pathForMenu(menu))
 					setSelected(menu)
 					props.onActiveMenuChange(menu)
 					props.onIsMobileMenuOpenChange(false)
