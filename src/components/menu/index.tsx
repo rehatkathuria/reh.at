@@ -176,7 +176,7 @@ export const Component: FC<IMenu> = (props) => {
 				{main.map((element) => {
 					return element === selected ? (
 						<MenuItem key={element}>
-							<ArrowContainer> {">"} </ArrowContainer>
+							<ArrowContainer> {"►"} </ArrowContainer>
 							{menuItemTitle(element)}
 						</MenuItem>
 					) : (
@@ -196,7 +196,7 @@ export const Component: FC<IMenu> = (props) => {
 				{main.map((element) => {
 					return element === selected ? (
 						<MenuItem key={element}>
-							<ArrowContainer> {">"} </ArrowContainer>
+							<ArrowContainer> {"►"} </ArrowContainer>
 							{mobileMenuItemTitle(element)}
 						</MenuItem>
 					) : (
