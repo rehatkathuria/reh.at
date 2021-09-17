@@ -6,7 +6,7 @@ export const ArrowContainer = styled.div`
 
 export const Menu = styled.div`
 	text-transform: uppercase;
-	position: absolute;
+	position: fixed;
 	height: 100vh;
 	display: grid;
 	align-content: center;
