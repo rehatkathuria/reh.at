@@ -7,6 +7,8 @@ import { Component as WorksComponent } from "@components/works"
 import { useEffect, useState } from "react"
 import {
 	Container,
+	Grain,
+	GrainContainer,
 	Header,
 	HeaderContainer,
 	Playback,
@@ -54,6 +56,9 @@ export default () => {
 
 	return (
 		<>
+			<GrainContainer>
+				<Grain />
+			</GrainContainer>
 			<Menu
 				isMobileMenuOpen={isMobileMenuOpen}
 				onIsMobileMenuOpenChange={setIsMenuMobileOpen}

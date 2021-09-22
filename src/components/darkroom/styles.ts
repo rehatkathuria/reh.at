@@ -4,7 +4,7 @@ import { ContentContainer } from "@components/index/styles"
 import { Canvas as ThreeCanvas } from "@react-three/fiber"
 
 export const Canvas = styled(ThreeCanvas)`
-	background: ${(props) => props.theme.background};
+	background: clear;
 	max-height: 300px;
 	width: calc(100vw - 500px);
 `

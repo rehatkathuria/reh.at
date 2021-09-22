@@ -36,6 +36,7 @@ export const GrainContainer = styled.div`
 	height: 100vh;
 	overflow: hidden;
 	position: absolute;
+	z-index: -1;
 `
 
 export const Grain = styled.div`
